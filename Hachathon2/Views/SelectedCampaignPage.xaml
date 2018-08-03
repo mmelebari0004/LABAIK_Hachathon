@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hachathon2.SelectedCampaignPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+                    <StackLayout>
+
+            <StackLayout Orientation="Vertical" >
+                <Grid HeightRequest="150">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" >
+                        <Image x:Name="CampaignImagePath" WidthRequest="300" HeightRequest="300" 
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    </Grid>
+                    <Grid Grid.Column="2" Padding="5" >
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label x:Name="CampaignName"  TextColor="Black" FontSize="15" FontAttributes="Bold"
+                           VerticalOptions="Start" HorizontalOptions="Start"/>
+                            <StackLayout HorizontalOptions="Start" Orientation="Horizontal" Spacing="2">
+                                    <Image Source="yellowStar.png"/>
+                                    <Image Source="yellowStar.png"/>
+                                    <Image Source="yellowStar.png"/>
+                                    <Image Source="yellowStar.png"/>
+                                    <Image Source="star.png"/>
+
+                                </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="CampaignAveREview"/>
+                                <Image Source="likeActive.png" HorizontalOptions="Start"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </Grid>
+                </Grid>
+
+
+
+                <StackLayout Orientation="Vertical" BackgroundColor="White">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid HeightRequest="100">
+                                    <StackLayout Orientation="Horizontal"  HeightRequest="40" BackgroundColor="LightGray" Padding="10" >
+                                        <Label Text="VIP Class" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                        <Label x:Name="VIPPrice" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                    <Grid  VerticalOptions="Fill" HorizontalOptions="FillAndExpand" >
+                                        <Button HeightRequest="50" BackgroundColor="Transparent" Clicked="NextBuutonClicked" />
+                                        
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1">
+
+                    </Grid>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" BackgroundColor="White" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid HeightRequest="100">
+                                    <StackLayout Orientation="Horizontal"  HeightRequest="40" BackgroundColor="LightGray" Padding="10" >
+                                        <Label Text="Business Class" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                        <Label x:Name="BusinessPrice" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                <Grid  VerticalOptions="Fill" HorizontalOptions="FillAndExpand" >
+                                        <Button HeightRequest="50" BackgroundColor="Transparent" Clicked="NextBuutonClicked" />
+                                        
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1">
+
+                    </Grid>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" BackgroundColor="White" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid HeightRequest="100">
+                                    <StackLayout Orientation="Horizontal"  HeightRequest="40" BackgroundColor="LightGray" Padding="10" >
+                                        <Label Text="Economy Class" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                        <Label x:Name="Economyprice" 
+                           TextColor="Black" FontSize="20" 
+                           VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                    <Grid  VerticalOptions="Fill" HorizontalOptions="FillAndExpand" >
+                                        <Button HeightRequest="50" BackgroundColor="Transparent" Clicked="NextBuutonClicked" />
+                                        
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid Grid.Row="1">
+
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+            <Label Text="Comments: " 
+                           TextColor="Blue" FontSize="Large" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+            <ListView x:Name="CommentsListView"  HasUnevenRows="True"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                    <Label x:Name="CommentLabel" Text="{Binding Comment}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="AddCommentButton" Text="Add Comment" TextColor="Blue" BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" BorderRadius="50"  BorderColor="Blue" BorderWidth="1" Clicked="AddCommentButton_Clicked"  />
+
+
+            <Editor x:Name="AddCommentEntry" IsVisible="False"/>
+                <Button x:Name="SendCommentButton" Text="Send" IsVisible="False" TextColor="Blue" BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" BorderRadius="50"  BorderColor="Blue" BorderWidth="1" Clicked="SendCommentButton_Clicked"  />
+
+
+            </StackLayout>
+
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

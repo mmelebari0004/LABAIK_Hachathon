@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hachathon2.CampaignListPage" BackgroundImage="background.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical" BackgroundColor="LightGray">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  HeightRequest="40" Spacing="10" Padding="5" >
+                    <Label Text="Country" TextColor="Black" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontAttributes="Bold"/>
+                    <Label x:Name="selectedCounty" TextColor="Black" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="End" Orientation="Horizontal" Spacing="2">
+                    <Image Source="yellowStar.png"/>
+                    <Image Source="yellowStar.png"/>
+                    <Image Source="yellowStar.png"/>
+                    <Image Source="yellowStar.png"/>
+                    <Image Source="star.png"/>
+
+
+                </StackLayout>
+                <Picker x:Name="SortPicker"  Title="Sort by" 
+                            VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"
+                            WidthRequest="150"  FontSize="Small" >
+                    
+                </Picker>
+            </StackLayout>
+        
+        <ListView x:Name="CampaignListView"  HasUnevenRows="True"  ItemSelected="CampaignListView_ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Orientation="Vertical" BackgroundColor="White">
+                            <Grid HeightRequest="150">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1" >
+                                    <Image Source="{Binding CampaignImagePath}" WidthRequest="300" HeightRequest="300" 
+                                               HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                                <Grid Grid.Column="2" Padding="5" >
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding CampaignName}"  TextColor="Black" FontSize="15" FontAttributes="Bold"
+                           VerticalOptions="Start" HorizontalOptions="Start"/>
+                                        
+                                        <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding CampaignAveREview}"/>
+                                            <Image Source="likeActive.png" HorizontalOptions="Start"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="End">
+                                        <Label Text="Price:"  TextColor="Black" FontSize="15" FontAttributes="Italic"
+                           HorizontalOptions="End" />
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="End">
+                                                <Label Text="{Binding CampaignEcoPrice}"  TextColor="Black" FontSize="15" 
+                           VerticalOptions="Center"/>
+                                            <Label Text="$"  TextColor="Black" FontSize="15" FontAttributes="Bold"
+                           VerticalOptions="Center"  />
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </Grid>
+                            </Grid>
+
+
+
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+
+        </ListView>
+
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

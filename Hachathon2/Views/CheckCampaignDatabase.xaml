@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hachathon2.CheckCampaignDatabase">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="CampaignListView"  HasUnevenRows="True" ItemsSource="{Binding campaignList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignID}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                   
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignName}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignCountryOfResidence}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignPhone}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                 
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignEmail}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                   
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignImagePath}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                   
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignNoStars}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                   
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignAveREview}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignAvaVIP}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignVIPPrice}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignAvaEco}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignEcoPrice}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignAvaBus}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  HeightRequest="40" Padding="10" Spacing="10">
+                                    <Label Text="{Binding CampaignBusPrice}" 
+                           TextColor="Blue" FontSize="15" 
+                           VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                  
+                                </StackLayout>
+
+                                <Button x:Name="BackButton" Text="Back" TextColor="Blue" BackgroundColor="White"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                    BorderRadius="50"  BorderColor="Blue" BorderWidth="1" Clicked="BackButton_Clicked" />
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
